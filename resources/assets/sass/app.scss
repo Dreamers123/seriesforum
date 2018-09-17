@@ -1,0 +1,21 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body{
+  background-color: #49ff8b;
+}
+.panel-body p{
+  font-size: 20px;
+}
+.panel-heading{
+  display: block;
+  font-family: "Rage Italic";
+  font-size: large;
+}
