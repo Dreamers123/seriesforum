@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Admin;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
@@ -24,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with(compact('tags'));
 
         });
+
+
     }
 
     /**

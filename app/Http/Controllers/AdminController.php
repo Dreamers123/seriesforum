@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Admin;
 class AdminController extends Controller
 {
+
     public function create()
     {
         return view('admin.create');
@@ -13,17 +14,22 @@ class AdminController extends Controller
 
     public function store()
     {
-        if(auth()->guard('admin')->attempt(request(['email','password']))){
+        if(! auth()->guard('admin')->attempt(request(['email','password']))){
             return back();
         }
-        return redirect('/quotes');
+        return redirect('/admin');
     }
 
     public function destroy()
     {
-        auth()->logout();
+        auth()->guard('admin')->logout();
 
         return redirect('register');
+    }
+    public function dashboard()
+    {
+        $admins=Admin::find(1);
+        return view('layouts.master',compact('admins'));
     }
 
 }

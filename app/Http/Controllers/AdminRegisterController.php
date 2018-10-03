@@ -15,12 +15,12 @@ class AdminRegisterController extends Controller
             'email'=>'required|email',
             'password'=>'required|confirmed'
         ]);
-        $admin=Admin::create( [
+        $admin=Admin::create([
             'email'=> request('email'),
             'password'=> request('password'),
         ]);
 
-        auth()->login($admin);
+        auth()->guard('admin')->login($admin);
         return redirect('quotes');
     }
 }

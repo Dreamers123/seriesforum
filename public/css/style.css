@@ -1,0 +1,17 @@
+body{
+  background:#f4f4f4;
+  color: white;
+}
+form{
+   background-color: coral;
+   }
+.modal-content{
+  margin-top: 27%;
+   }
+.navbar-default{
+  background-color: coral;
+  opacity: .9;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}

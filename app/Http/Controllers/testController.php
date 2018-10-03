@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class testController extends Controller
@@ -16,5 +17,10 @@ class testController extends Controller
         ];
          return $data;
 
+    }
+    public function users()
+    {
+        $user=User::all();
+        return $user;
     }
 }

@@ -9,4 +9,14 @@ class Admin extends Authenticatable
     protected $fillable = [
          'email', 'password',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password']=bcrypt($value);
+    }
+    public function admin()
+    {
+        $admin=Admin::find(7);
+        return $admin;
+    }
 }

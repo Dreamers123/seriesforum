@@ -61,4 +61,8 @@ Route::get('passing-data-to-views', function () {
         ->with('abeer', 'Prionty');
 });
 
-Route::get('testing','testController@test');
+Route::get('test','testController@test');
+Route::get('users','testController@users');
+
+
+Route::get('admin','AdminController@dashboard')->middleware('admin');

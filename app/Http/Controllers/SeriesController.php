@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 class SeriesController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('qote',['except' =>'index','show']);
+    }
+
     public function index()
     {
         $posts=Series::all();
@@ -38,7 +43,7 @@ class SeriesController extends Controller
             // Filename to store
             $fileNameToStore= $filename.'_'.time().'.'.$extension;
             // Upload Image
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            $path = $request->file('cover_image')->storeAs('/public/cover_images', $fileNameToStore);
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
